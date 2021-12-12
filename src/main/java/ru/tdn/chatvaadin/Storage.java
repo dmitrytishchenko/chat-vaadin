@@ -23,6 +23,11 @@ public class Storage {
         eventBus.fireEvent(new ChatEvent());
     }
 
+    public void addRecordJoin(String user) {
+        messages.add(new ChatMessage("", user));
+        eventBus.fireEvent(new ChatEvent());
+    }
+
     @Getter
     @AllArgsConstructor
     static class ChatMessage {
